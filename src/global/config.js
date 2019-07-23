@@ -1,0 +1,1 @@
+export const GRAPHQL_URI = process.env.GRAPHQL_URI || 'https://api.graph.cool/simple/v1/cjyg79usp4f4c0104whiodqpl'
