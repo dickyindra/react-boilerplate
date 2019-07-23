@@ -1,20 +1,30 @@
 import React from 'react'
+import className from 'classnames'
+import { Link } from 'react-router-dom'
 
-const Navbar = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div className="container">
-            <a href="#" className="navbar-brand">React Boilerplate</a>
+import NavbarContainer from './container'
+import navbarMenu from '@/data/navbar-menu'
 
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Add User</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-)
+const Navbar = (props) => {
+    const pathname = props.location.pathname
 
-export default Navbar
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div className="container">
+                <a href="#" className="navbar-brand">React Boilerplate</a>
+
+                <ul className="navbar-nav ml-auto">
+                    {navbarMenu.map((menu, index) => {
+                        return (
+                            <li className={className('nav-item', { 'active': pathname == menu.to })}>
+                                <Link className="nav-link" to={menu.to}>{menu.name}</Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+        </nav>
+    )
+}
+
+export default NavbarContainer(Navbar)

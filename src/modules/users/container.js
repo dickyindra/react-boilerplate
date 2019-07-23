@@ -3,8 +3,8 @@ import { graphql } from 'react-apollo'
 
 import allUsers from '@/graphql/api/queries/all-users'
 
-const HomeContainer = compose(
+const UsersContainer = compose(
     graphql(allUsers, { name: 'allUsers' })
 )
 
-export default HomeContainer
+export default UsersContainer

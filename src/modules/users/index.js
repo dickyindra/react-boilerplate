@@ -1,9 +1,8 @@
 import React from 'react'
-import { Query } from 'react-apollo'
 
-import HomeContainer from '@/modules/home/container'
+import UsersContainer from './container'
 
-const Home = (props) => {
+const Users = (props) => {
     if (props.allUsers.loading) {
         return (
             <h5>Loading...</h5>
@@ -36,4 +35,4 @@ const Home = (props) => {
     )
 }
 
-export default HomeContainer(Home)
+export default UsersContainer(Users)

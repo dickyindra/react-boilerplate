@@ -1,10 +1,16 @@
-import Home from '@/modules/home'
+import Users from '@/modules/users'
+import AddUser from '@/modules/add-user'
 
 const routes = [
     {
         exact: true,
-        component: Home,
+        component: Users,
         path: '/'
+    },
+    {
+        exact: true,
+        component: AddUser,
+        path: '/add'
     }
 ]
 
